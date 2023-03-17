@@ -11,6 +11,7 @@ const QuizWrapper = styled(Box)(() => ({
 
 export default function QuizList() {
     let [quizData, setQuiz] = useState([]);
+
     useEffect(() => {
         (async () => {
             try {

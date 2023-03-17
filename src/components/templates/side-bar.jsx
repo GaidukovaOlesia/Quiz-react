@@ -11,6 +11,7 @@ const a = {
 }
 
 export default function SideBar() {
+
     return (
         <div>
             <a href='src/components/templates/side-bar#' style={a}>JS</a>

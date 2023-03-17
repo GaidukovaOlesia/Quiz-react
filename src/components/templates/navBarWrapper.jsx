@@ -10,6 +10,7 @@ const Wrap = styled(Box)(() => ({
 }));
 
 export default function NavBarWrapper() {
+
     return (
         <Wrap>
             <SideBar />

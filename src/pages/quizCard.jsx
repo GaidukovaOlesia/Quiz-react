@@ -11,6 +11,7 @@ import CreateModal from "../components/dialogs/createModal";
 
 export default function QuizCard({quizName, quizImage, quizDescription}) {
     const [open, setOpenModal] = useState(false);
+
     return (
         <>
             <Card sx={{

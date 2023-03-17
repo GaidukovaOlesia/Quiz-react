@@ -69,7 +69,6 @@ export default function SearchAppBar() {
                 boxSizing: 'border-box',
                 maxWidth: '1600px',
                 margin: '0 auto',
-
             }}
             >
                 <AppBar sx={{

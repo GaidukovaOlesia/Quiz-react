@@ -1,6 +1,5 @@
 export default function Footer() {
     return (
-
             <div className="container-footer">
                 <div className="d-flex">
                     <ul>
@@ -27,5 +26,4 @@ export default function Footer() {
                     </ul>
                 </div>
             </div>
-
     )}
