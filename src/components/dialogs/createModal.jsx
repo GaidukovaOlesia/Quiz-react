@@ -13,7 +13,6 @@ import {
 } from '@mui/material';
 
 export default function CreateModal({open, handleClose, quizName, quizImage, quizDescription}) {
-
     return (
         <div>
             <Dialog

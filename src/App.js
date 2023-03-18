@@ -31,6 +31,7 @@ const FooterWrapper = styled(Box)(() => ({
 }))
 
 function App() {
+    
   return (
     <div className="App">
         <Grid container>
