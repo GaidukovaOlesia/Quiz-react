@@ -4,15 +4,15 @@ export default function SideBar() {
     return (
         <div>
             <a href='#'
-                style={{
-                    display: 'block',
-                    color: 'white',
-                    textDecoration: 'none',
-                    fontSize: '18px',
-                    marginBottom: '20px',
-                    marginLeft: '12px',
-                    marginTop: '20px',
-                }}
+               style={{
+                   display: 'block',
+                   color: 'white',
+                   textDecoration: 'none',
+                   fontSize: '18px',
+                   marginBottom: '20px',
+                   marginLeft: '12px',
+                   marginTop: '20px',
+               }}
             >
                 Add new quiz
             </a>

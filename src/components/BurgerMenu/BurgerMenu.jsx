@@ -19,7 +19,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import SearchInfo from "../SearchButton";
 
-const drawerWidth = '100%';
+const drawerWidth = '70%';
 
 const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
