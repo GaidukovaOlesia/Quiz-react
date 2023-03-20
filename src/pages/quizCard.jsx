@@ -7,7 +7,7 @@ import {
     CardActions,
     Button,
 } from "@mui/material";
-import CreateModal from "../components/dialogs/createModal";
+import CreateModal from "../components/dialogs/CreateModal";
 
 export default function QuizCard({quizName, quizImage, quizDescription}) {
     const [open, setOpenModal] = useState(false);

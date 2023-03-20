@@ -1,4 +1,4 @@
-import SearchAppBar from "../menu/menu";
+import SearchAppBar from "../dialogs/Menu";
 
 export default function Header() {
 

@@ -9,8 +9,8 @@ import {
     alpha,
     InputBase,
 } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -86,7 +86,8 @@ export default function SearchAppBar() {
                                 display: {lg: 'none', md: 'block', xs: 'block'},
                             }}
                         >
-                            <MenuIcon />
+                            <BurgerMenu />
+
                         </IconButton>
                         <Typography
                             variant="h6"

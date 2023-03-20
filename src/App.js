@@ -1,9 +1,9 @@
 import React from "react";
 import './App.css';
 import QuizList from "./pages/quizList";
-import Header from "./components/templates/header";
-import Footer from "./components/templates/footer";
-import NavBarWrapper from "./components/templates/navBarWrapper";
+import Header from "./components/templates/Header";
+import Footer from "./components/templates/Footer";
+import NavBarWrapper from "./components/templates/NavBarWrapper";
 import { Grid, Box, styled  } from '@mui/material';
 
 const HeaderWrapper = styled(Box)(() => ({
