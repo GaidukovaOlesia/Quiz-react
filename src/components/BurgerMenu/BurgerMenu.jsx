@@ -1,4 +1,4 @@
-import React from "react";
+import {Component} from 'react';
 import { styled,
     useTheme,
     Drawer,
@@ -31,27 +31,26 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     backgroundColor: '#6fbbab',
 }));
 
-export default function BurgerMenu() {
-    const theme = useTheme();
-    const [open, setOpen] = React.useState(false);
+export default class BurgerMenu extends Component {
+    state = {
+        open: false,
+    }
 
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
+    constructor() {
+        super();
+        this.handleDrawerOpen = this.handleDrawerOpen.bind(this);
+    }
+    render() {
 
-    const handleDrawerClose = () => {
-        setOpen(false);
-    };
-
-    return (
+        return (
             <Box sx={{ display: 'flex' }}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
-                        onClick={handleDrawerOpen}
+                        onClick={this.handleDrawerOpen}
                         edge="start"
-                        sx={{ mr: 2, ...(open && { display: 'none' }) }}
+                        sx={{ mr: 2, ...(this.state.open && { display: 'none' }) }}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -67,7 +66,7 @@ export default function BurgerMenu() {
                     }}
                     variant="persistent"
                     anchor="left"
-                    open={open}
+                    open={this.state.open}
                 >
                     <Box
                         sx={{
@@ -77,8 +76,8 @@ export default function BurgerMenu() {
                         }}
                     >
                     <DrawerHeader>
-                        <IconButton onClick={handleDrawerClose}>
-                            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                        <IconButton onClick={this.handleDrawerOpen}>
+                            <ChevronLeftIcon />
                         </IconButton>
                     </DrawerHeader>
                     <List>
@@ -99,5 +98,10 @@ export default function BurgerMenu() {
                     </Box>
                 </Drawer>
             </Box>
-    )
+        )
+    }
+
+    handleDrawerOpen() {
+        this.setState({open: !this.state.open})
+    }
 }

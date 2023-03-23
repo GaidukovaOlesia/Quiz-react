@@ -3,8 +3,8 @@ import './App.css';
 import QuizList from "./pages/quizList";
 import Header from "./components/templates/Header";
 import Footer from "./components/templates/Footer";
-import NavBarWrapper from "./components/templates/NavBarWrapper";
 import { Grid, Box, styled  } from '@mui/material';
+import SideBar from "./components/templates/SideBar";
 
 const HeaderWrapper = styled(Box)(() => ({
     backgroundColor: 'rgb(7,60,42)',
@@ -16,6 +16,12 @@ const HeaderWrapper = styled(Box)(() => ({
     display: 'flex',
     justifyContent: 'flex-end',
     alignItems: 'center',
+}));
+
+const NavBarWrapper = styled(Box)(() => ({
+    backgroundColor: 'rgba(9,80,55,1)',
+    height: '100%',
+    overflow: 'auto',
 }));
 
 const BodyWrapper = styled(Box)(() => ({
@@ -31,7 +37,6 @@ const FooterWrapper = styled(Box)(() => ({
 }))
 
 function App() {
-    
   return (
     <div className="App">
         <Grid container>
@@ -52,7 +57,9 @@ function App() {
                 xs={0}
                 display={{xs: "none", md: "none", lg: "block"}}
                 >
-                <NavBarWrapper />
+                <NavBarWrapper>
+                    <SideBar />
+                </NavBarWrapper>
             </Grid>
             <Grid item lg={10} md={12} xs={12}>
                 <BodyWrapper>

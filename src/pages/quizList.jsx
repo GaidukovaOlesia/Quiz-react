@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import { Component} from "react";
 import QuizCard from "./quizCard";
 import {Box, styled} from "@mui/material";
 import {quiz} from "../api";
@@ -9,24 +9,18 @@ const QuizWrapper = styled(Box)(() => ({
     justifyContent: 'center'
 }))
 
-export default function QuizList() {
-    let [quizData, setQuiz] = useState([]);
+export default class QuizList extends Component {
+    state = {
+        quizData: []
+    }
+    constructor() {
+        super();
+    }
 
-    useEffect(() => {
-        (async () => {
-            try {
-                const { data } = await quiz.fetch();
-                setQuiz(data);
-            } catch (err) {
-                console.log(err);
-            }
-
-        })();
-    }, []);
-
-    return (
+    render() {
+        return (
             <QuizWrapper>
-                {quizData.map((quiz, index) => (
+                {this.state.quizData.map((quiz, index) => (
                     <QuizCard
                         key={index}
                         quizName={quiz.nameQuiz}
@@ -36,5 +30,11 @@ export default function QuizList() {
                     />
                 ))}
             </QuizWrapper>
-    )
+        )
+    }
+
+    componentDidMount() {
+        quiz.fetch()
+            .then(quiz => this.setState({...this.state, quizData: quiz.data}))
+    }
 }

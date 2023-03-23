@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
     AppBar,
     Box,
@@ -55,66 +55,135 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export default function SearchAppBar() {
-    return (
-        <>
-            <Box sx={{
-                position: 'absolute',
-                top: '15px',
-                left: 0,
-                right: 0,
-                width: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                boxSizing: 'border-box',
-                maxWidth: '1600px',
-                margin: '0 auto',
-            }}
-            >
-                <AppBar sx={{
-                    backgroundColor: 'rgb(7,60,42)',
-                }}
-                        position="static">
-                    <Toolbar>
-                        <IconButton
-                            size="large"
-                            edge="start"
-                            color="inherit"
-                            aria-label="open drawer"
-                            sx={{
-                                mr: 2,
-                                display: {lg: 'none', md: 'block', xs: 'block'},
-                            }}
-                        >
-                            <BurgerMenu />
+export default class SearchAppBar extends Component {
+    constructor() {
+        super();
+    }
 
-                        </IconButton>
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="div"
-                            sx={{
-                                flexGrow: 1,
-                                display: { xs: 'none', sm: 'block' } }}
-                        >
-                            QUIZ
-                        </Typography>
-                        <Search>
-                            <SearchIconWrapper>
-                                <SearchIcon />
-                            </SearchIconWrapper>
-                            <StyledInputBase
+    render() {
+        return (
+            <>
+                <Box sx={{
+                    position: 'absolute',
+                    top: '15px',
+                    left: 0,
+                    right: 0,
+                    width: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    boxSizing: 'border-box',
+                    maxWidth: '1600px',
+                    margin: '0 auto',
+                }}
+                >
+                    <AppBar sx={{
+                        backgroundColor: 'rgb(7,60,42)',
+                    }}
+                            position="static">
+                        <Toolbar>
+                            <IconButton
+                                size="large"
+                                edge="start"
+                                color="inherit"
+                                aria-label="open drawer"
                                 sx={{
-                                    width: '200px',
-                                    color: 'white',
+                                    mr: 2,
+                                    display: {lg: 'none', md: 'block', xs: 'block'},
                                 }}
-                                placeholder="Create quiz…"
-                                inputProps={{ 'aria-label': 'search' }}
-                            />
-                        </Search>
-                    </Toolbar>
-                </AppBar>
-            </Box>
-        </>
-    );
+                            >
+                                <BurgerMenu />
+
+                            </IconButton>
+                            <Typography
+                                variant="h6"
+                                noWrap
+                                component="div"
+                                sx={{
+                                    flexGrow: 1,
+                                    display: { xs: 'none', sm: 'block' } }}
+                            >
+                                QUIZ
+                            </Typography>
+                            <Search>
+                                <SearchIconWrapper>
+                                    <SearchIcon />
+                                </SearchIconWrapper>
+                                <StyledInputBase
+                                    sx={{
+                                        width: '200px',
+                                        color: 'white',
+                                    }}
+                                    placeholder="Create quiz…"
+                                    inputProps={{ 'aria-label': 'search' }}
+                                />
+                            </Search>
+                        </Toolbar>
+                    </AppBar>
+                </Box>
+            </>
+        )
+    }
 }
+// export default function SearchAppBar() {
+//     return (
+//         <>
+//             <Box sx={{
+//                 position: 'absolute',
+//                 top: '15px',
+//                 left: 0,
+//                 right: 0,
+//                 width: '100%',
+//                 display: 'flex',
+//                 alignItems: 'center',
+//                 boxSizing: 'border-box',
+//                 maxWidth: '1600px',
+//                 margin: '0 auto',
+//             }}
+//             >
+//                 <AppBar sx={{
+//                     backgroundColor: 'rgb(7,60,42)',
+//                 }}
+//                         position="static">
+//                     <Toolbar>
+//                         <IconButton
+//                             size="large"
+//                             edge="start"
+//                             color="inherit"
+//                             aria-label="open drawer"
+//                             sx={{
+//                                 mr: 2,
+//                                 display: {lg: 'none', md: 'block', xs: 'block'},
+//                             }}
+//                         >
+//                             <BurgerMenu />
+//
+//                         </IconButton>
+//                         <Typography
+//                             variant="h6"
+//                             noWrap
+//                             component="div"
+//                             sx={{
+//                                 flexGrow: 1,
+//                                 display: { xs: 'none', sm: 'block' } }}
+//                         >
+//                             QUIZ
+//                         </Typography>
+//                         <Search>
+//                             <SearchIconWrapper>
+//                                 <SearchIcon />
+//                             </SearchIconWrapper>
+//                             <StyledInputBase
+//                                 sx={{
+//                                     width: '200px',
+//                                     color: 'white',
+//                                 }}
+//                                 placeholder="Create quiz…"
+//                                 inputProps={{ 'aria-label': 'search' }}
+//                             />
+//                         </Search>
+//                     </Toolbar>
+//                 </AppBar>
+//             </Box>
+//         </>
+//     );
+// }

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import { Component } from 'react';
 import {
     Card,
     Typography,
@@ -9,12 +9,21 @@ import {
 } from "@mui/material";
 import CreateModal from "../components/dialogs/CreateModal";
 
-export default function QuizCard({quizName, quizImage, quizDescription}) {
-    const [open, setOpenModal] = useState(false);
+export default class QuizCard extends Component {
+    state = {
+        open: false,
+    }
 
-    return (
-        <>
-            <Card sx={{
+    constructor(props) {
+        super(props);
+        this.handleToggleOpenModal = this.handleToggleOpenModal.bind(this);
+    }
+
+    render() {
+        const { quizName, quizImage, quizDescription } = this.props;
+        return (
+            <>
+                <Card sx={{
                 width: 330,
                 height: '400px',
                 backgroundColor: '#bce7de',
@@ -41,16 +50,21 @@ export default function QuizCard({quizName, quizImage, quizDescription}) {
             </CardContent>
             <CardActions>
                 <Button size="small">Start quiz</Button>
-                <Button size="small" onClick={() => setOpenModal(true)}>Show More</Button>
+                <Button size="small" onClick={this.handleToggleOpenModal}>Show More</Button>
             </CardActions>
             </Card>
             <CreateModal
-                open={open}
-                handleClose={() => setOpenModal(false)}
+                open={this.state.open}
+                handleClose={this.handleToggleOpenModal}
                 quizName={quizName}
                 quizImage={quizImage}
                 quizDescription={quizDescription}
             />
         </>
-    );
+        )
+    }
+
+    handleToggleOpenModal() {
+        this.setState({open: !this.state.open});
+    }
 }
