@@ -1,10 +1,18 @@
 import SearchAppBar from "../dialogs/Menu";
+import {Component} from "react";
 
-export default function Header() {
+export default class Header extends Component {
+    constructor() {
+        super();
+    }
 
-    return (
+    render() {
+        return (
             <div  className='container'>
                 <SearchAppBar />
             </div>
-    )
+
+        )
+    }
 }
+
