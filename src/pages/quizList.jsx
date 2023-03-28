@@ -1,40 +1,39 @@
-import React, {useState, useEffect} from "react";
-import QuizCard from "./quizCard";
-import {Box, styled} from "@mui/material";
-import {quiz} from "../api";
+import React, { useState, useEffect } from 'react';
+import { Box, styled } from '@mui/material';
+import { quiz } from '../api';
+import QuizCard from './quizCard';
 
 const QuizWrapper = styled(Box)(() => ({
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center'
-}))
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'center',
+}));
 
 export default function QuizList() {
-    let [quizData, setQuiz] = useState([]);
+  const [quizData, setQuiz] = useState([]);
 
-    useEffect(() => {
-        (async () => {
-            try {
-                const { data } = await quiz.fetch();
-                setQuiz(data);
-            } catch (err) {
-                console.log(err);
-            }
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await quiz.fetch();
+        setQuiz(data);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, []);
 
-        })();
-    }, []);
-
-    return (
-            <QuizWrapper>
-                {quizData.map((quiz, index) => (
-                    <QuizCard
-                        key={index}
-                        quizName={quiz.nameQuiz}
-                        id={index}
-                        quizImage={quiz.avatar}
-                        quizDescription={quiz.description}
-                    />
-                ))}
-            </QuizWrapper>
-    )
+  return (
+    <QuizWrapper>
+      {quizData.map((quiz, index) => (
+        <QuizCard
+          key={index}
+          quizName={quiz.nameQuiz}
+          id={index}
+          quizImage={quiz.avatar}
+          quizDescription={quiz.description}
+        />
+      ))}
+    </QuizWrapper>
+  );
 }
