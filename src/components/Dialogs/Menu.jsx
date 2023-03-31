@@ -108,7 +108,7 @@ export default function SearchAppBar() {
                   width: '200px',
                   color: 'white',
                 }}
-                placeholder='Create quiz…'
+                placeholder='Search…'
                 inputProps={{ 'aria-label': 'search' }}
               />
             </Search>
