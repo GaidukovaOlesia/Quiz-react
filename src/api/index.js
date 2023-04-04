@@ -4,4 +4,8 @@ const quiz = {
   fetch: (() => axios.get('/quiz').then((data) => data)),
 };
 
-export { quiz };
+const jsQuiz = {
+  fetch: ((quiz) => axios.get(`/${quiz}`).then((data) => data)),
+};
+
+export { quiz, jsQuiz };

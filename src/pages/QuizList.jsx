@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, styled } from '@mui/material';
 import { quiz } from '../api';
-import QuizCard from './quizCard';
+import QuizCard from './QuizCard';
 
 const QuizWrapper = styled(Box)(() => ({
   display: 'flex',
@@ -16,6 +16,7 @@ export default function QuizList() {
     (async () => {
       try {
         const { data } = await quiz.fetch();
+        console.log(data);
         setQuiz(data);
       } catch (err) {
         console.log(err);

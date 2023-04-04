@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchAppBar from '../dialogs/Menu';
+import SearchAppBar from '../Dialogs/Menu';
 
 export default function Header() {
   return (

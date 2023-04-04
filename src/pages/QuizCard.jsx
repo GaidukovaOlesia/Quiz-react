@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Card,
   Typography,
@@ -7,10 +8,11 @@ import {
   CardActions,
   Button,
 } from '@mui/material';
-import CreateModal from '../components/dialogs/CreateModal';
+import CreateModal from '../components/Dialogs/CreateModal';
 
 export default function QuizCard({ quizName, quizImage, quizDescription }) {
   const [open, setOpenModal] = useState(false);
+  const pathToQuiz = quizName.toLowerCase();
 
   return (
         <>
@@ -40,7 +42,17 @@ export default function QuizCard({ quizName, quizImage, quizDescription }) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size='small'>Start quiz</Button>
+                <Button size='small'>
+                  <Link
+                    style={{
+                      textDecoration: 'none',
+                      color: 'inherit',
+                    }}
+                    to={`/quiz/${pathToQuiz}`}
+                  >
+                    Start quiz
+                  </Link>
+                  </Button>
                 <Button size='small' onClick={() => setOpenModal(true)}>Show More</Button>
             </CardActions>
             </Card>
