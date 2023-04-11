@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Box, styled } from '@mui/material';
-import { quiz } from '../api';
+import { useDispatch, useSelector } from 'react-redux';
 import QuizCard from './QuizCard';
+import { quizesThunks } from '../store/modules/quizes';
 
 const QuizWrapper = styled(Box)(() => ({
   display: 'flex',
@@ -10,14 +11,13 @@ const QuizWrapper = styled(Box)(() => ({
 }));
 
 export default function QuizList() {
-  const [quizData, setQuiz] = useState([]);
+  const { filterQuizes } = useSelector((state) => state.quizesReducer);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await quiz.fetch();
-        console.log(data);
-        setQuiz(data);
+        await dispatch(quizesThunks.fetchQuizes());
       } catch (err) {
         console.log(err);
       }
@@ -26,7 +26,7 @@ export default function QuizList() {
 
   return (
     <QuizWrapper>
-      {quizData.map((quiz, index) => (
+      {filterQuizes.map((quiz, index) => (
         <QuizCard
           key={index}
           quizName={quiz.nameQuiz}

@@ -10,7 +10,7 @@ export default function QuizRoutes() {
   return (
     <GridTemplate>
       <Routes>
-        <Route index element={ <QuizList /> }/>
+        <Route index element={ <QuizList /> } path='/'/>
         <Route path='/' element={<QuizList />}/>
         <Route path='create' element={<AddNewQuiz />}/>
         <Route path='favourites' element={<Favourites />}/>
