@@ -10,7 +10,9 @@ import {
   InputBase,
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import { useDispatch } from 'react-redux';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import { quizesActions } from '../../store/modules/quizes';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -56,6 +58,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchAppBar() {
+  const dispatch = useDispatch();
+  const handleChangeSearch = (event) => {
+    dispatch(quizesActions.filterQuizes({ search: event.target.value }));
+  };
   return (
     <>
       <Box sx={{
@@ -73,6 +79,10 @@ export default function SearchAppBar() {
       >
         <AppBar sx={{
           backgroundColor: 'rgb(7,60,42)',
+          maxWidth: '1300px',
+          margin: 'auto',
+          display: 'flex',
+          justifyContent: { lg: 'space-between', md: 'center', sm: 'center' },
         }}
                 position='static'>
           <Toolbar>
@@ -107,8 +117,10 @@ export default function SearchAppBar() {
                 sx={{
                   width: '200px',
                   color: 'white',
+                  display: { lg: 'block', sm: 'none', xs: 'none' },
                 }}
                 placeholder='Search…'
+                onChange={handleChangeSearch}
                 inputProps={{ 'aria-label': 'search' }}
               />
             </Search>

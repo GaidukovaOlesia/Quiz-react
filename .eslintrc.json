@@ -63,8 +63,8 @@
     "error",
     {
       "devDependencies": [
-        "**/*.test.ts",
-        "**/*.spec.ts"
+        "**/*.test.js",
+        "**/*.spec.js"
       ]
     }
   ],
