@@ -1,11 +1,15 @@
 import axios from './service';
 
-const quiz = {
+const quizes = {
   fetch: (() => axios.get('/quiz').then((data) => data)),
 };
 
-const jsQuiz = {
+const quiz = {
   fetch: ((quiz) => axios.get(`/${quiz}`).then((data) => data)),
 };
 
-export { quiz, jsQuiz };
+const newQuiz = {
+  fetch: ((body) => axios.post('/quiz', body).then((data) => data)),
+};
+
+export { quizes, quiz, newQuiz };

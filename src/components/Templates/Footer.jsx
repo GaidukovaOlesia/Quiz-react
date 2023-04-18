@@ -7,7 +7,7 @@ export default function Footer() {
       <Link
         style={{
           display: 'block',
-          color: 'white',
+          color: '#bce7de',
           textDecoration: 'none',
           fontSize: '18px',
           marginLeft: '12px',
@@ -24,7 +24,7 @@ export default function Footer() {
               marginLeft: '12px',
             }}
             to={'//www.instagram.com'}>
-            <img style={{ width: '50px', height: '50px' }} src='/images/instagram.svg' alt='instagram'/>
+            <img style={{ width: '30px', height: '30px' }} src='/images/instagram.svg' alt='instagram'/>
           </Link>
         </li>
         <li>
@@ -35,7 +35,7 @@ export default function Footer() {
               marginLeft: '12px',
             }}
             to={'//www.facebook.com'}>
-            <img style={{ width: '50px', height: '50px' }} src='/images/facebook.svg' alt='facebook'/>
+            <img style={{ width: '30px', height: '30px' }} src='/images/facebook.svg' alt='facebook'/>
           </Link>
         </li>
         <li>
@@ -47,7 +47,7 @@ export default function Footer() {
               marginLeft: '12px',
             }}
             to={'//www.twitter.com'}>
-            <img style={{ width: '50px', height: '50px' }} src='/images/twitter.svg' alt='twitter'/>
+            <img style={{ width: '30px', height: '30px' }} src='/images/twitter.svg' alt='twitter'/>
           </Link>
         </li>
       </ul>
