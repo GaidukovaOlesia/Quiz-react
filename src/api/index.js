@@ -12,4 +12,13 @@ const newQuiz = {
   fetch: ((body) => axios.post('/quiz', body).then((data) => data)),
 };
 
-export { quizes, quiz, newQuiz };
+const favouriteQuiz = {
+  fetch: ((body, id) => axios.put(`/quiz/${id}`, body).then((data) => data)),
+};
+
+export {
+  quizes,
+  quiz,
+  newQuiz,
+  favouriteQuiz,
+};

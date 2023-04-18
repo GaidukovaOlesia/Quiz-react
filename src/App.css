@@ -25,6 +25,18 @@ button {
 .justify-between{
   justify-content: space-between;
 }
+.justify-center{
+  justify-content: center;
+}
+.align-center{
+  align-items: center;
+}
+.favourite{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: -40px;
+}
 .quiz {
   background-color: #67c3b0;
   width: 600px;

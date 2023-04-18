@@ -5,9 +5,7 @@ import QuizCard from './QuizCard';
 import { quizesThunks } from '../store/modules/quizes';
 
 const QuizWrapper = styled(Box)(() => ({
-  display: 'flex',
-  flexWrap: 'wrap',
-  justifyContent: 'center',
+  height: '100%',
 }));
 
 export default function QuizList() {
@@ -26,18 +24,30 @@ export default function QuizList() {
 
   return (
     <QuizWrapper>
-      {filterQuizes.map((quiz, index) => (
-        <QuizCard
-          sx={{
-            boxShadow: '10px 10px 42px 0 rgba(0, 0, 0, 0.75)',
-          }}
-          key={index}
-          quizName={quiz.nameQuiz}
-          id={index}
-          quizImage={quiz.avatar}
-          quizDescription={quiz.description}
-        />
-      ))}
+      <h2 style={{
+        paddingTop: '40px',
+        color: 'rgb(7,60,42)',
+        fontSize: '30px',
+        margin: 'auto',
+        textAlign: 'center',
+      }}
+      >
+        Choose a quiz and test your knowledge!
+      </h2>
+      <div className='favourite'>
+        {filterQuizes.map((quiz, index) => (
+          <QuizCard
+            sx={{
+              boxShadow: '10px 10px 42px 0 rgba(0, 0, 0, 0.75)',
+            }}
+            key={index}
+            quizName={quiz.nameQuiz}
+            id={quiz.id}
+            quizImage={quiz.avatar}
+            quizDescription={quiz.description}
+          />
+        ))}
+    </div>
     </QuizWrapper>
   );
 }
