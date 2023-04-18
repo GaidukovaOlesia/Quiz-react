@@ -1,10 +1,15 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { moduleName } from './constant';
-import { quiz } from '../../../api';
+import { newQuiz, quizes } from '../../../api';
 
 const fetchQuizes = createAsyncThunk(`${moduleName}/fetchQuizes`, async () => {
-  const { data } = await quiz.fetch();
+  const { data } = await quizes.fetch();
   return data;
 });
 
-export default { fetchQuizes };
+const postQuiz = createAsyncThunk(`${moduleName}/postQuiz`, async (body) => {
+  const { data } = await newQuiz.fetch(body);
+  return data;
+});
+
+export default { fetchQuizes, postQuiz };

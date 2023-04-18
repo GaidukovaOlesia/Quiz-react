@@ -28,6 +28,9 @@ export default function QuizList() {
     <QuizWrapper>
       {filterQuizes.map((quiz, index) => (
         <QuizCard
+          sx={{
+            boxShadow: '10px 10px 42px 0 rgba(0, 0, 0, 0.75)',
+          }}
           key={index}
           quizName={quiz.nameQuiz}
           id={index}

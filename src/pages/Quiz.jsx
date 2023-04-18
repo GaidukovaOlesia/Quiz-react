@@ -45,7 +45,6 @@ export default function Quiz() {
       try {
         await dispatch(quizThunks.fetchQuiz(name));// eslint-disable-next-line react-hooks/exhaustive-deps
       } catch (err) {
-        // setError(true);
         console.log(err);
       } finally {
         setLoading(false);

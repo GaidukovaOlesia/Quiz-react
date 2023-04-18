@@ -7,7 +7,7 @@ export default function SideBar() {
           <Link
             style={{
               display: 'block',
-              color: 'white',
+              color: '#bce7de',
               textDecoration: 'none',
               fontSize: '18px',
               marginBottom: '20px',
@@ -21,7 +21,7 @@ export default function SideBar() {
           <Link
              style={{
                display: 'block',
-               color: 'white',
+               color: '#bce7de',
                textDecoration: 'none',
                fontSize: '18px',
                marginBottom: '20px',
@@ -35,7 +35,7 @@ export default function SideBar() {
           <Link
              style={{
                display: 'block',
-               color: 'white',
+               color: '#bce7de',
                textDecoration: 'none',
                fontSize: '18px',
                marginBottom: '20px',
